@@ -1,0 +1,16 @@
+[package]
+name = "shutupbot"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+chrono = "0.4.34"
+serenity = "0.12.1"
+tokio = { version = "1.21.2", features = ["macros", "rt-multi-thread"] }
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
+opt-level = 3
+panic = "abort"
